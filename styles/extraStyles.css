@@ -1,3 +1,70 @@
+/* general */
 .none{
     display: none!important;
+}
+/* bootstrap corrections */
+.nav-item.dropdown {
+    text-decoration: none;
+    list-style: none;
+}
+/* custom styles */
+.siteLogo{
+    height: 40px;
+    width: 40px;
+}
+.userImg {
+    height: 30px;
+    border: 1px solid 
+    black;
+    border-radius: 100%;
+    margin-top: -5px;
+}
+.pageContent {
+    padding: 20px;
+}
+.noHighlight{
+    color: inherit;
+}
+:root{
+    --colorMenuHeight: 20vw;
+    --colorMenuMobileHeight: 150px;
+}
+.colorsMenu{
+    height: var(--colorMenuHeight);
+    color: white;
+    font-size: 20px;
+    line-height: var(--colorMenuHeight);
+    text-align: center;
+}
+.colorsMenu.c1{
+    background-color: blue;
+}
+.colorsMenu.c2{
+    background-color: green;
+}
+.colorsMenu.c3{
+    background-color: yellowgreen;
+}
+.colorsMenu.c4{
+    background-color: orange;
+}
+.colorsMenu.c5{
+    background-color: red;
+}
+.colorsMenu.c6{
+    background-color: purple;
+}
+.colorsMenu.c7{
+    background-color: pink;
+}
+
+.footer{
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+@media (max-width: 575px) {
+    .colorsMenu{
+        height: var(--colorMenuMobileHeight);
+        line-height: var(--colorMenuMobileHeight);
+    }
 }

@@ -4,12 +4,15 @@ var pagesConfig = {
     },
     runs:{
         title: "Runs"
+    },
+    createRun:{
+        title: "Créer un Run"
     }
 };
-var currentPage = "home";
+var currentPage = "createRun"; //also sets default page
 document.addEventListener("DOMContentLoaded", function(evt){
     //show home page
-    changePage("home");
+    changePage(currentPage);
 
     //transform into dynamic links
     var allLinks = document.getElementsByTagName("a");
@@ -41,6 +44,8 @@ function changePage(pageName){
     window[currentPage + "Page"].classList.add("none");
     //show page
     window[pageName + "Page"].classList.remove("none");
+    //set title
+    document.title = pagesConfig[pageName].title;
     //set currentPage
     currentPage = pageName;
 }

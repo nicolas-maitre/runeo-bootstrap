@@ -1,44 +1,63 @@
-<html>
+<!doctype html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link rel="stylesheet" href="libs/bootstrap-4.3.1-dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="styles/extraStyles.css"/>
-        
 <!--
         <script src="libs/jquery_3.4.1/jquery.min.js"></script>
         <script src="libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 -->
-        
         <script src="scripts/utils.js"></script>
         <script src="scripts/demoPagesManager.js"></script>
     </head>
     <body>
-        <header class="topBar">
+        <header class="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="/home">
+                        <img src="images/runeo_logo.png" class="siteLogo" alt="runeo logo"/>
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/runs">Runs <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Véhicules </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Chauffeurs </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Groupes </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Horaires </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Présences </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Artistes </a>
+                            </li>
+                        </ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                                <img class="userImg" src="images/user.png"/> Jean-Michel
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Mon Compte</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Déconnexion</a>
                             </div>
                         </li>
+                    <!-- Search Bar
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Disabled</a>
                         </li>
@@ -47,27 +66,54 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
+                    -->
                     </div>
-                    </nav>
+                </nav>
         </header>
         <section class="pageContent">
             <div id="homePage" class="none">
-                <a href="/runs">
-                    <button>Runs!</button>
-                </a>
+                <h1>Runeo</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm colorsMenu c1">
+                            <a href="/runs" class="noHighlight">
+                                <div>Runs</div>
+                            </a>
+                        </div>
+                        <div class="col-sm colorsMenu c2">Véhicules</div>
+                        <div class="col-sm colorsMenu c3">Chauffeurs</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm colorsMenu c4">Groupes</div>
+                        <div class="col-sm colorsMenu c5">Horaire</div>
+                        <div class="col-sm colorsMenu c6">Présences</div>
+                        <div class="col-sm colorsMenu c7">Artistes</div>
+                    </div>
+                </div>
             </div>
             <div id="runsPage" class="none">
-                <a href="/home">
-                    <button>Home!</button>
+                <h1>Runs</h1>
+                <a href="/createRun">
+                    <button>Créer</button>
                 </a>
-                <a href="http://google.ch/">
-                    <button>test!</button>
+            </div>
+            <div id="createRunPage" class="none">
+                <h1>Créer un Run</h1>
+                <h2>Informations générales</h2>
+                <form class="form">
+                    <label for="createRunFormArtists">Artistes</label>
+                    <input type="text" id="createRunFormArtists" class=""/>
+                    <label for="createRunPassengerCount">Nombre de passagers</label>
+                    <input type="number" id="createRunPassengerCount" class=""/>
+                </form>
+                <h2>Itinéraires</h2>
+                <a href="/runs">
+                    <button>Valider</button>
                 </a>
             </div>
         </section>
         <footer class="footer">
-
+            Pizza pizza team
         </footer>
-        
     </body>
 </html>
