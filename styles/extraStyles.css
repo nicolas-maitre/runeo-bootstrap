@@ -57,14 +57,93 @@
 .colorsMenu.c7{
     background-color: pink;
 }
+#createRunPassengerCountCheckBox {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+#createRunInfosTextArea {
+    min-height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#createRunWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.createRunWindowContent {
+    background-color: white;
+    margin-top: 30px;
+    text-align: left;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.createRunWindowContent >.container{
+    padding-top: 20px;
+}
+.createRunWindowHeader {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+    font-size: 17px;
+}
+#windowCloseBtn {
+    position: absolute;
+    right: 10px;
+    width: 30px;
+}
+.windowStreetMap {
+    min-height: 300px;
+}
+.timeSelectSeparator {
+    line-height: 38px;
+    padding: 0 5px 0 5px;
+}
+.dateTimeSpacer {
+    width: 10px;
+}
+.selectedVehicle, .selectedRunner {
+    line-height: 40px;
+    margin-bottom: 0;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.table_statut_img {
+    height: 30px;
+}
+.windowVehiclesTable > tbody{
+    overflow-y: scroll;
+}
+.windowsSubmitButton {
+    height: 60px;
+    width: 90%;
+    max-width: 200px;
+    float: right;
+    margin-top: 20px;
+}
 
 .footer{
     text-align: center;
     border-top: 1px solid #ccc;
 }
+
 @media (max-width: 575px) {
     .colorsMenu{
         height: var(--colorMenuMobileHeight);
         line-height: var(--colorMenuMobileHeight);
+    }
+    .createRunWindowContent {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .dateTimeSpacer{
+        display: none;
     }
 }
