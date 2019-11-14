@@ -1,3 +1,9 @@
+:root{
+    /*--colorMenuHeight: 11vw;*/
+    --colorMenuHeight: calc(5vw + 100px);
+    --colorMenuMobileHeight: 150px;
+    --runeoRedColor: #c74747;
+}
 /* general */
 .none{
     display: none!important;
@@ -8,9 +14,39 @@
     list-style: none;
 }
 /* custom styles */
+.bgDarkRuneo{
+    background-color: #414141;
+}
+.navbar-hamburger-icon {
+    background-image: url("../images/styleguide/hamburger.svg");
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@keyframes logoComeIn{
+    from{
+        margin-left: -100px;
+        margin-right: 100px;
+    }
+    to{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
 .siteLogo{
     height: 40px;
     width: 40px;
+    animation: logoComeIn 1s;
+}
+.fakeTitle {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.fakeTitle > img {
+    width: calc(100% - 50px);
+    max-width: 500px;
 }
 .userImg {
     height: 30px;
@@ -19,16 +55,43 @@
     border-radius: 100%;
     margin-top: -5px;
 }
-.pageContent {
+.pageContent > div{
     padding: 20px;
+    min-height: calc(100vh - 66px - 30px);
+}
+@keyframes sunriseOfTheCarMan{
+    from {
+        background-position-y: calc(100vh);
+    }
+    to {
+        background-position-y: calc(100vh - 400px);
+    }
+}
+@keyframes zoomInInitial{
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+#homePage {
+    background-color: #85c3c1; 
+    background-image: url("../images/styleguide/voiture_man.svg");
+    background-size: 140vw;
+    background-repeat: no-repeat;
+    background-position-x: -11vw;
+    background-position-y: calc(100vh - 400px);
+    animation: sunriseOfTheCarMan 1s;
+}
+#homePage > *{
+    animation: zoomInInitial 0.5s
 }
 .noHighlight{
     color: inherit;
 }
-:root{
-    --colorMenuHeight: 20vw;
-    --colorMenuMobileHeight: 150px;
-}
+
 .colorsMenu{
     height: var(--colorMenuHeight);
     color: white;
@@ -57,6 +120,128 @@
 .colorsMenu.c7{
     background-color: pink;
 }
+
+#runsPage, #createRunPage {
+    background-color: #f5f5f5;
+    background-image: url("../images/styleguide/ronds_rouge_fond.svg");
+    background-size: 110vw;
+    background-repeat: no-repeat;
+    background-position-x: -5vw;
+    background-position-y: calc(100% + 90px);
+}
+
+#createRunPage{
+    padding: 0;
+    text-align: center;
+}
+
+/*slider*/
+.slideButtons {
+    /*text-align: center;*/
+    padding: 20px;
+}
+.slideButtons > button {
+    height: 70px;
+    width: 70px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #ccc;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 15px 0 15px;
+}
+.slideButtons > button.selected{
+    background-color: var(--runeoRedColor);
+}
+#calendarBtn{
+    background-image: url(../images/styleguide/calendar.svg);
+}
+#locationBtn{
+    background-image: url(../images/styleguide/mapmarker.svg);
+}
+.slideBar{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+.slideBarContent {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
+}
+.slideBarContent > p {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.slideBarContent > a {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+}
+.saveBtn {
+    height: 30px;
+    width: 30px;
+    border: 0;
+    background-color: transparent;
+    background-image: url(../images/styleguide/floppy.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.slideInfos {
+    width: 100%;
+    max-width: 800px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 20px;
+}
+#slideImg {
+    vertical-align: middle;
+}
+.slideInfos > p {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+.slideBarHider {
+    overflow: hidden;
+    height: calc(450px - 30px);
+}
+#sliderContainer {
+    overflow-x: scroll;
+    width: 100%;
+    height: 450px;
+}
+.runSlider {
+    width: 200vw;
+}
+.slideContainer {
+    display: inline-block;
+    vertical-align: top;
+    width: 100vw;
+    margin-left: -3px;
+}
+.slideContainer > .container {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    margin-top: 10px;
+    padding: 20px 30px 10px 30px;
+    text-align: left;
+    box-shadow: 0 0 5px #aaa;
+}
+/*endslider*/
+
 #createRunPassengerCountCheckBox {
     margin-left: 5px;
     margin-top: 10px;
@@ -121,7 +306,7 @@
 .windowVehiclesTable > tbody{
     overflow-y: scroll;
 }
-.windowsSubmitButton {
+#runWindowSubmitButton {
     height: 60px;
     width: 90%;
     max-width: 200px;
@@ -131,7 +316,11 @@
 
 .footer{
     text-align: center;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #aaa;
+    background-color:var(--runeoRedColor);
+    height: 30px;
+    color:#d98a8a;
+    padding-top: 2px;
 }
 
 @media (max-width: 575px) {

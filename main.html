@@ -1,268 +1,342 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="libs/bootstrap-4.3.1-dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="styles/extraStyles.css"/>
-<!--
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="/images/styleguide/logo_runeo_color.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/styleguide/logo_runeo_color.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="libs/bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/extraStyles.css" />
+    <!--
         <script src="libs/jquery_3.4.1/jquery.min.js"></script>
         <script src="libs/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
 -->
-        <script src="scripts/utils.js"></script>
-        <script src="scripts/demoPagesManager.js"></script>
-    </head>
-    <body>
-        <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="/home">
-                        <img src="images/runeo_logo.png" class="siteLogo" alt="runeo logo"/>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/demoPagesManager.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bgDarkRuneo">
+            <a class="navbar-brand" href="/home">
+                <img src="images/styleguide/logo_runeo_color.svg" class="siteLogo" alt="runeo logo" />
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="navbar-hamburger-icon"></div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/runs">Runs </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Véhicules </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chauffeurs </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Groupes </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Horaires </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Présences </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Artistes </a>
+                    </li>
+                </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="userImg" src="images/user.png" /> Jean-Michel
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/runs">Runs </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Véhicules </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Chauffeurs </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Groupes </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Horaires </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Présences </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Artistes </a>
-                            </li>
-                        </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="userImg" src="images/user.png"/> Jean-Michel
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Mon Compte</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Déconnexion</a>
-                            </div>
-                        </li>
-                    <!-- Search Bar
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                        </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    -->
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Mon Compte</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Déconnexion</a>
                     </div>
-                </nav>
-        </header>
-        <section class="pageContent">
-            <div id="homePage" class="none">
-                <h1>Runeo</h1>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm colorsMenu c1">
-                            <a href="/runs" class="noHighlight">
-                                <div>Runs</div>
-                            </a>
-                        </div>
-                        <div class="col-sm colorsMenu c2">Véhicules</div>
-                        <div class="col-sm colorsMenu c3">Chauffeurs</div>
+                </li>
+                <!-- Search Bar
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                -->
+            </div>
+        </nav>
+    </header>
+    <section class="pageContent">
+        <div id="homePage" class="none">
+            <div class="fakeTitle">
+                <img src="images/faketitle.png" alt="Runeo" />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm colorsMenu c1">
+                        <a href="/runs" class="noHighlight">
+                            <div>Runs</div>
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="col-sm colorsMenu c4">Groupes</div>
-                        <div class="col-sm colorsMenu c5">Horaire</div>
-                        <div class="col-sm colorsMenu c6">Présences</div>
-                        <div class="col-sm colorsMenu c7">Artistes</div>
-                    </div>
+                    <div class="col-sm colorsMenu c2">Véhicules</div>
+                    <div class="col-sm colorsMenu c3">Chauffeurs</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm colorsMenu c4">Groupes</div>
+                    <div class="col-sm colorsMenu c5">Horaire</div>
+                    <div class="col-sm colorsMenu c6">Présences</div>
+                    <div class="col-sm colorsMenu c7">Artistes</div>
                 </div>
             </div>
-            <div id="runsPage" class="none">
-                <h1>Runs</h1>
-                <a href="/createRun">
-                    <button class="btn btn-primary">Créer un run</button>
-                </a>
+        </div>
+        <div id="runsPage" class="none">
+            <h1>Runs</h1>
+            <a href="/createRun">
+                <button class="btn btn-primary">Créer un run</button>
+            </a>
+        </div>
+        <div id="createRunPage" class="none">
+            <div class="slideButtons">
+                <button id="calendarBtn" class="selected"></button>
+                <button id="locationBtn"></button>
             </div>
-            <div id="createRunPage" class="container none">
-                <h1>Créer un Run</h1>
-                <h2>Informations générales</h2>
-                <form>
-                    <div class="form-group">
-                        <label for="createRunFormArtists">Artistes</label>
-                        <input type="text" id="createRunFormArtists" class="form-control" placeholder="Entrez la liste des artistes, séparés par une virgule (,)"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="createRunPassengerCount">Nombre de passagers</label>
-                        <input type="number" id="createRunPassengerCount" class="form-control" placeholder="Entrez le nombre de passagers" min="0"/>
-                        <input type="checkbox" id="createRunPassengerCountCheckBox"/>
-                        <label for="createRunPassengerCountCheckBox">A confirmer</label>
-                    </div>
-                    <div class="form-group">
-                        <label for="createRunInfosTextArea">Informations</label>
-                        <textarea class="form-control" id="createRunInfosTextArea" placeholder="Informations liées au run"></textarea>
-                    </div>
-                </form>
-                <h2>Itinéraires</h2>
-                <button class="btn btn-primary" id="openRunWindow">Créer/Modifier</button>
-                <a href="/runs">
-                    <button>Valider</button>
-                </a>
-                <div id="createRunWindow" class="none">
-                    <div class="createRunWindowContent container">
-                        <div class="createRunWindowHeader">
-                            Créer / Modifier un itinéraire
-                            <button id="windowCloseBtn">x</button>
+            <div class="slideBar">
+                <div class="slideBarContent">
+                    <p>Création d'un Run</p>
+                    <a href="/runs"><button class="saveBtn"></button></a>
+                </div>
+            </div>
+            <div class="slideInfos">
+                <img id="slideImg" src="images/styleguide/calendar.svg"/>
+                <p id="slideText">Informations générales</p>
+            </div>
+            <div class="slideBarHider">
+                <div id="sliderContainer">
+                    <div class="runSlider">
+                        <div class="slideContainer" id="generalInfosSection">
+                            <div class="container">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="createRunFormArtists">Artistes</label>
+                                        <input type="text" id="createRunFormArtists" class="form-control"
+                                            placeholder="Entrez la liste des artistes, séparés par une virgule (,)" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="createRunPassengerCount">Nombre de passagers</label>
+                                        <input type="number" id="createRunPassengerCount" class="form-control"
+                                            placeholder="Entrez le nombre de passagers" min="0" />
+                                        <input type="checkbox" id="createRunPassengerCountCheckBox" />
+                                        <label for="createRunPassengerCountCheckBox">A confirmer</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="createRunInfosTextArea">Informations</label>
+                                        <textarea class="form-control" id="createRunInfosTextArea"
+                                            placeholder="Informations liées au run"></textarea>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <h2>Départ</h2>
-                                    <form class="container">
-                                        <div class="form-group row">
-                                            <label for="createRunStartPlace">Lieu</label>
-                                            <input type="text" id="createRunStartPlace" class="form-control" placeholder="Entrez le lieu"/>                                                       
+                        <div class="slideContainer" id="itineraireSection">
+                            <div class="container">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-secondary" id="openRunWindow1">Créer/Modifier</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-secondary" id="openRunWindow2">Créer/Modifier</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="btn btn-secondary" id="openRunWindow3">Créer/Modifier</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <a href="/runs">
+                                    <button class="btn btn-primary">Valider</button>
+                                </a>
+                                <div id="createRunWindow" class="none">
+                                    <div class="createRunWindowContent container">
+                                        <div class="createRunWindowHeader">
+                                            Créer / Modifier un itinéraire
+                                            <button id="windowCloseBtn">x</button>
                                         </div>
-                                        <div class="form-group row">
-                                            <label style="width: 100%">Date et heure</label>
-                                            <input type="date" id="createRunStartDate" class="form-control col-md-6"/>
-                                            <div class="dateTimeSpacer"></div>
-                                            <div class="col-md-5 row">
-                                                <input type="number" class="form-control col-sm-5" value="21"/>
-                                                <p class="timeSelectSeparator">h</p>
-                                                <input type="number" class="form-control col-sm-5" value="30"/>
-                                            </div>       
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-7">
+                                                    <h2>Départ</h2>
+                                                    <form class="container">
+                                                        <div class="form-group row">
+                                                            <label for="createRunStartPlace">Lieu</label>
+                                                            <input type="text" id="createRunStartPlace" class="form-control"
+                                                                placeholder="Entrez le lieu" />
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label style="width: 100%">Date et heure</label>
+                                                            <input type="date" id="createRunStartDate" class="form-control col-md-6" />
+                                                            <div class="dateTimeSpacer"></div>
+                                                            <div class="col-md-5 row">
+                                                                <input type="number" class="form-control col-sm-5" value="21" />
+                                                                <p class="timeSelectSeparator">h</p>
+                                                                <input type="number" class="form-control col-sm-5" value="30" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <h2>Arrivée</h2>
+                                                    <form class="container">
+                                                        <div class="form-group row">
+                                                            <label for="createRunStartPlace">Lieu</label>
+                                                            <input type="text" id="createRunStartPlace" class="form-control"
+                                                                placeholder="Entrez le lieu" />
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label style="width: 100%">Date et heure</label>
+                                                            <input type="date" id="createRunStartDate" class="form-control col-md-6" />
+                                                            <div class="dateTimeSpacer"></div>
+                                                            <div class="col-md-5 row">
+                                                                <input type="number" class="form-control col-sm-5" value="21" />
+                                                                <p class="timeSelectSeparator">h</p>
+                                                                <input type="number" class="form-control col-sm-5" value="30" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <h2>Véhicule</h2>
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <form class="form-inline col-sm-5">
+                                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                                    aria-label="Search">
+                                                                <button class="btn btn-outline-success my-2 my-sm-0 none"
+                                                                    type="submit">Search</button>
+                                                            </form>
+                                                            <p class="selectedVehicle col-sm-4">Opel Vivaro</p>
+                                                            <button class="btn btn-info">Gérer</button>
+                                                        </div>
+                                                        <table class="table windowVehiclesTable">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Nom</th>
+                                                                    <th scope="col">Type</th>
+                                                                    <th scope="col">Num de plaque</th>
+                                                                    <th scope="col">Carburant</th>
+                                                                    <th scope="col">Statut</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Opel Vivaro</td>
+                                                                    <td>Camionette</td>
+                                                                    <td>VD240417</td>
+                                                                    <td>25%</td>
+                                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Tesla Model S</td>
+                                                                    <td>Sport</td>
+                                                                    <td>VD162739</td>
+                                                                    <td>75%</td>
+                                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <h2>Runner</h2>
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <form class="form-inline col-sm-5">
+                                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                                    aria-label="Search">
+                                                                <button class="btn btn-outline-success my-2 my-sm-0 none"
+                                                                    type="submit">Search</button>
+                                                            </form>
+                                                            <p class="selectedRunner col-sm-4">Patrick Poilu</p>
+                                                            <button class="btn btn-info">Gérer</button>
+                                                        </div>
+                                                        <table class="table windowRunnersTable">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Nom</th>
+                                                                    <th scope="col">Statut</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="selected">Patrick Poilu</td>
+                                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Jean-Paul Godard</td>
+                                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Eude Delatoiture</td>
+                                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Nathalie Fressinet</td>
+                                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Carole Dénarié</td>
+                                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <button id="runWindowSubmitButton"
+                                                        class="windowsSubmitButton btn btn-primary">Valider</button>
+                                                </div>
+                                                <iframe class="col-lg-5 windowStreetMap" frameborder="0" scrolling="no" marginheight="0"
+                                                    marginwidth="0"
+                                                    src="https://www.openstreetmap.org/export/embed.html?bbox=6.495816707611085%2C46.81693419777094%2C6.502532958984375%2C46.82322599374023&amp;layer=mapnik"></iframe>
+                                            </div>
                                         </div>
-                                    </form>
-                                    <h2>Arrivée</h2>
-                                    <form class="container">
-                                        <div class="form-group row">
-                                            <label for="createRunStartPlace">Lieu</label>
-                                            <input type="text" id="createRunStartPlace" class="form-control" placeholder="Entrez le lieu"/>                                                       
-                                        </div>
-                                        <div class="form-group row">
-                                            <label style="width: 100%">Date et heure</label>
-                                            <input type="date" id="createRunStartDate" class="form-control col-md-6"/>
-                                            <div class="dateTimeSpacer"></div>
-                                            <div class="col-md-5 row">
-                                                <input type="number" class="form-control col-sm-5" value="21"/>
-                                                <p class="timeSelectSeparator">h</p>
-                                                <input type="number" class="form-control col-sm-5" value="30"/>
-                                            </div>       
-                                        </div>
-                                    </form>
-                                    <h2>Véhicule</h2>
-                                    <div class="container">
-                                        <div class="row">
-                                            <form class="form-inline col-sm-5">
-                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                                <button class="btn btn-outline-success my-2 my-sm-0 none" type="submit">Search</button>
-                                            </form>
-                                            <p class="selectedVehicle col-sm-4">Opel Vivaro</p>
-                                            <button class="btn btn-info">Gérer</button>
-                                        </div>
-                                        <table class="table windowVehiclesTable">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Nom</th>
-                                                    <th scope="col">Type</th>
-                                                    <th scope="col">Num de plaque</th>
-                                                    <th scope="col">Carburant</th>
-                                                    <th scope="col">Statut</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Opel Vivaro</td>
-                                                    <td>Camionette</td>
-                                                    <td>VD240417</td>
-                                                    <td>25%</td>
-                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Tesla Model S</td>
-                                                    <td>Sport</td>
-                                                    <td>VD162739</td>
-                                                    <td>75%</td>
-                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
-                                    <h2>Runner</h2>
-                                    <div class="container">
-                                        <div class="row">
-                                            <form class="form-inline col-sm-5">
-                                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                                <button class="btn btn-outline-success my-2 my-sm-0 none" type="submit">Search</button>
-                                            </form>
-                                            <p class="selectedRunner col-sm-4">Patrick Poilu</p>
-                                            <button class="btn btn-info">Gérer</button>
-                                        </div>
-                                        <table class="table windowRunnersTable">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Nom</th>
-                                                    <th scope="col">Statut</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="selected">Patrick Poilu</td>
-                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jean-Paul Godard</td>
-                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Eude Delatoiture</td>
-                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Nathalie Fressinet</td>
-                                                    <td><img class="table_statut_img" src="images/warning_statut.png"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Carole Dénarié</td>
-                                                    <td><img class="table_statut_img" src="images/ok_statut.png"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <button class="windowsSubmitButton btn btn-primary">Valider</button>
                                 </div>
-                                <iframe class="col-lg-5 windowStreetMap" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=6.495816707611085%2C46.81693419777094%2C6.502532958984375%2C46.82322599374023&amp;layer=mapnik"></iframe>
+                                <script>
+                                    //window
+                                    openRunWindow1.addEventListener("click", function (evt) {
+                                        createRunWindow.classList.remove("none");
+                                    });
+                                    openRunWindow2.addEventListener("click", function (evt) {
+                                        createRunWindow.classList.remove("none");
+                                    });
+                                    openRunWindow3.addEventListener("click", function (evt) {
+                                        createRunWindow.classList.remove("none");
+                                    });
+                                    windowCloseBtn.addEventListener("click", function (evt) {
+                                        createRunWindow.classList.add("none");
+                                    });
+                                    runWindowSubmitButton.addEventListener("click", function (evt) {
+                                        createRunWindow.classList.add("none");
+                                    });
+
+                                </script>
                             </div>
                         </div>
                     </div>
                 </div>
-                <script>
-                    //window
-                    openRunWindow.addEventListener("click", function(evt){
-                        createRunWindow.classList.remove("none");
-                    });
-                    windowCloseBtn.addEventListener("click", function(evt){
-                        createRunWindow.classList.add("none");
-                    });
-                </script>
             </div>
-        </section>
-        <footer class="footer">
-            Pizza pizza team
-        </footer>
-    </body>
+        </div>
+    </section>
+    <footer class="footer">
+        Pizza pizza team
+    </footer>
+</body>
+
 </html>
