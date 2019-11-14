@@ -1,4 +1,4 @@
-currentScrollAnimation = false;
+var currentScrollAnimation = false;
 
 document.addEventListener("DOMContentLoaded", function(evt){
     //bootstrap navbar, but native
@@ -63,12 +63,19 @@ var runsSliderParams = {
 
 function setRunsSlider(){
     calendarBtn.addEventListener("click", function(ev){
-        sliderContainer.scrollToElem(generalInfosSection, {isHorizontal:true});
+        sliderContainer.scrollToElem(generalInfosSection, {isHorizontal:true, time:500});
     });
     locationBtn.addEventListener("click", function(ev){
-        sliderContainer.scrollToElem(itineraireSection, {isHorizontal:true});
+        sliderContainer.scrollToElem(itineraireSection, {isHorizontal:true, time:500});
     });
     sliderContainer.addEventListener('scroll', checkRunSliderScroll);
+
+    cardNextBtn.addEventListener("click", function(ev){
+        sliderContainer.scrollToElem(itineraireSection, {isHorizontal:true, time:500});
+    });
+    cardLastBtn.addEventListener("click", function(ev){
+        sliderContainer.scrollToElem(generalInfosSection, {isHorizontal:true, time:500});
+    });
 }
 function checkRunSliderScroll(){
     var selected = "infos";
@@ -99,7 +106,7 @@ function getBezierValue(y1, y2, x3){
     return 3 * x3 * Math.pow(1 - x3, 2) * y1 + 3 * Math.pow(x3, 2) * (1 - x3) * y2 + Math.pow(x3, 3);
 }
 
-function animateBezier(y1, y2, time, callBack){
+function animateBezier(y1, y2, {time = 1000, animationCallBack = false, callBack = false}){
     startFrameCount = false;
     targetFrameCount = false;
     function advanceAnimation(frameCount){
@@ -107,19 +114,22 @@ function animateBezier(y1, y2, time, callBack){
             startFrameCount = frameCount;
             targetFrameCount = frameCount + time;
         }
-        callBack(getBezierValue(y1, y2, (frameCount - startFrameCount) / time));
+        animationCallBack(getBezierValue(y1, y2, (frameCount - startFrameCount) / time));
         if(frameCount < targetFrameCount){
             currentScrollAnimation = requestAnimationFrame(advanceAnimation);
         }else{
             currentScrollAnimation = false;
+            if(callBack) callBack();
         }
     }
     currentScrollAnimation = requestAnimationFrame(advanceAnimation);
 }
 
-Element.prototype.scrollToElem = function(elem, {isHorizontal = false, time = 1000, animationCallBack = false}){
+Element.prototype.scrollToElem = function(elem, {isHorizontal = false, time = 1000, animationCallBack = false, callBack = false}){
+    this.style['scroll-snap-type'] = "unset";
     if(currentScrollAnimation){
-        clear
+        console.log("cancel current animation");
+        cancelAnimationFrame(currentScrollAnimation);
     }
     var initialPosition = this['scroll' + (isHorizontal ? 'Left' : 'Top')]
     var globalContainerPos = this.getBoundingClientRect()[isHorizontal ? 'left' : 'top'];
@@ -127,8 +137,11 @@ Element.prototype.scrollToElem = function(elem, {isHorizontal = false, time = 10
     var scrollFactor = globalElemPos - globalContainerPos;
     //console.log({initialPosition, globalContainerPos, globalElemPos, scrollFactor});
 
-    animateBezier(0.2, 1, time, (advancement) => {
+    animateBezier(0.2, 1, {time:time, animationCallBack:(advancement) => {
         this['scroll' + (isHorizontal ? 'Left' : 'Top')] = initialPosition + (scrollFactor * advancement);
         if(animationCallBack) animationCallBack(advancement);
-    });
+    }, callBack: () => {
+        this.style['scroll-snap-type'] = "";
+        if(callBack) callBack();
+    }});
 };

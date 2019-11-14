@@ -146,6 +146,9 @@
                                             placeholder="Informations liées au run"></textarea>
                                     </div>
                                 </form>
+                                <div class="runButtonsContainer">
+                                    <button id="cardNextBtn" class="btn btn-primary">Suite</button>
+                                </div>
                             </div>
                         </div>
                         <div class="slideContainer" id="itineraireSection">
@@ -167,9 +170,12 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <a href="/runs">
-                                    <button class="btn btn-primary">Valider</button>
-                                </a>
+                                <div class="runButtonsContainer">
+                                    <button id="cardLastBtn" class="btn btn-primary left">Retour</button>
+                                    <a href="/runs">
+                                        <button class="btn btn-danger">Valider</button>
+                                    </a>
+                                </div>
                                 <div id="createRunWindow" class="none">
                                     <div class="createRunWindowContent container">
                                         <div class="createRunWindowHeader">

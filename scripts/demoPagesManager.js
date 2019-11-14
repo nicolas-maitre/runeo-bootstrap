@@ -9,7 +9,7 @@ var pagesConfig = {
         title: "Créer un Run"
     }
 };
-var currentPage = "createRun"; //also sets default page
+var currentPage = "home"; //also sets default page
 document.addEventListener("DOMContentLoaded", function(evt){
     //show home page
     changePage(currentPage);
