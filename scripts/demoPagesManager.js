@@ -15,20 +15,18 @@ document.addEventListener("DOMContentLoaded", function(evt){
     changePage(currentPage);
 
     //transform into dynamic links
-    var allLinks = document.getElementsByTagName("a");
-    for(var indLink = 0; indLink < allLinks.length; indLink++){
-        setDynamicLink(allLinks[indLink]);
-    }
+    [...document.body.getElementsByTagName("a")].forEach(link=>setDynamicLink(link))
 });
 function setDynamicLink(elem){
-    //console.log("setDynamicLink", elem);
-    var href = elem.pathname;
+    console.log("setDynamicLink", elem);
+    var href = elem.getAttribute("href");
     var page = href.split("/")[1];
+    console.log("aaaa", page)
     if(pagesConfig[page]){
         //add event
         elem.addEventListener("click", function(evt){
-            elem.removeAttribute("href");
             evt.preventDefault();
+            elem.removeAttribute("href");
             //change page
             changePage(page);
             //put back href
